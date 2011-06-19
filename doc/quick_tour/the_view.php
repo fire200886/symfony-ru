@@ -111,14 +111,15 @@
       </div>
       <div class="section" id="decorating-templates">
 	<h2>Декорирование шаблонов<a class="headerlink" href="#decorating-templates" title="Permalink to this headline">¶</a></h2>
-	<p>More often than not, templates in a project share common elements, like the
-	  well-known header and footer. In Symfony2, we like to think about this problem
-	  differently: a template can be decorated by another one. This works exactly
-	  the same as PHP classes: template inheritance allows you to build a base
-	  "layout" template that contains all the common elements of your site and
-	  defines "blocks" that child templates can override.</p>
-	<p>The <tt class="docutils literal"><span class="pre">hello.html.twig</span></tt> template inherits from <tt class="docutils literal"><span class="pre">layout.html.twig</span></tt>, thanks to
-	  the <tt class="docutils literal"><span class="pre">extends</span></tt> tag:</p>
+	<p>Часто шаблоны в проекте используеют общие элементы, такие как,
+	например, шапка (header) и футер. В Symfony2 эта проблема решается
+	под другому: один шаблон может быть декорирован другим. Это работает
+	как классы в PHP: наследование шаблонов позволяет вам создать базовый
+	"layout", содержащий общие элементы сайта и задать "блоки" ("blocks"),
+	которые могут быть перегружены в дочерних шаблонах.</p>
+	<p>Шаблон <tt class="docutils literal"><span class="pre">hello.html.twig</span></tt>
+	наследуется от <tt class="docutils literal"><span class="pre">layout.html.twig</span></tt>
+	благодаря тегу <tt class="docutils literal"><span class="pre">extends</span></tt>:</p>
 	<div class="highlight-html+jinja"><div class="highlight"><pre><span class="c">{# src/Acme/DemoBundle/Resources/views/Demo/hello.html.twig #}</span>
 <span class="cp">{%</span> <span class="k">extends</span> <span class="s2">"AcmeDemoBundle::layout.html.twig"</span> <span class="cp">%}</span>
 
@@ -129,10 +130,11 @@
 <span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
 	  </pre></div>
 	</div>
-	<p>The <tt class="docutils literal"><span class="pre">AcmeDemoBundle::layout.html.twig</span></tt> notation sounds familiar, doesn't it?
-	  It is the same notation used to reference a regular template. The <tt class="docutils literal"><span class="pre">::</span></tt> part
-	  simply means that the controller element is empty, so the corresponding file
-	  is directly stored under <tt class="docutils literal"><span class="pre">views/</span></tt>.</p>
+	<p>Аннотация <tt class="docutils literal"><span class="pre">AcmeDemoBundle::layout.html.twig</span></tt>
+	звучит знакомо, не правда ли? Такие же аннотации используются
+	для обычных шаблонов. Часть <tt class="docutils literal"><span class="pre">::</span></tt>
+	означает что элемент "контроллер" пуст, что означает, что файл
+	находится прямо в папке <tt class="docutils literal"><span class="pre">views/</span></tt>.</p>
 	<p>Now, let's have a look at a simplified <tt class="docutils literal"><span class="pre">layout.html.twig</span></tt>:</p>
 	<div class="highlight-jinja"><div class="highlight"><pre><span class="c">{# src/Acme/DemoBundle/Resources/views/layout.html.twig #}</span><span class="x"></span>
 <span class="x">&lt;div class="symfony-content"&gt;</span>
