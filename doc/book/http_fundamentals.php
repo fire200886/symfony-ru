@@ -35,7 +35,7 @@ User-Agent: Mozilla/5.0 (Macintosh)
 	  </div>
 	  <p>Это простое сообщение содержит данные о том, какой именно ресурс запрашивается клиентом. Первая строка HTTP-запроса очень важна: она содержит две вещи: URI и метод HTTP.</p>
 	  <p>URI (например <tt class="docutils literal"><span class="pre">/</span></tt>, <tt class="docutils literal"><span class="pre">/contact</span></tt> и т.д.) это уникальный адрес или место нахождения, идентифицирующее ресурс, который запрашивает клиент. HTTP-метод (например <tt class="docutils literal"><span class="pre">GET</span></tt>)
-	     определяет, что вы хотите <em>делать</em> с ресурсом. HTTP-методы являются <em>действиями</em> (глаголы) запроса, и определяют несколько общих способов, которыми вы можете воздейсвовать на ресурс:</p>
+	     определяет, что вы хотите <em>делать</em> с ресурсом. HTTP-методы являются <em>действиями</em> (глаголы) запроса, и определяют несколько общих способов, которыми вы можете воздействовать на ресурс:</p>
 	  <table border="1" class="docutils">
 	    <colgroup>
 	      <col width="20%">
@@ -64,7 +64,7 @@ User-Agent: Mozilla/5.0 (Macintosh)
 	    <div class="note"></div><div class="admonition admonition-note"><p class="first admonition-title">Note</p>
 	      <p class="last">Фактически существует девять HTTP-методов, определяемых спецификацией HTTP, но многие из них не используются столь широко или не поддерживаются. В действительности, многие современные браузеры, не поддерживают методы <tt class="docutils literal"><span class="pre">PUT</span></tt> и <tt class="docutils literal"><span class="pre">DELETE</span></tt>.</p>
 	  </div></div>
-	  <p>В дополнение к первой строке, HTTP-запрос содержит другую информацию, называемой заголовками HTTP-запроса. Заголовки могут предостовлять широкий диапазон информации, такую как, запрашиваемый <tt class="docutils literal"><span class="pre">Host</span></tt>, формат ответа принимаемый клиентом (<tt class="docutils literal"><span class="pre">Accept</span></tt>) и приложение используемое клиентов для выполнения запроса (<tt class="docutils literal"><span class="pre">User-Agent</span></tt>). Существует много других заголовков, которые можно найти в <a class="reference external" href="http://en.wikipedia.org/wiki/List_of_HTTP_header_fields">Википедии</a>.</p>
+	  <p>В дополнение к первой строке, HTTP-запрос содержит другую информацию, называемой заголовками HTTP-запроса. Заголовки могут предоставлять широкий диапазон информации, такую как, запрашиваемый <tt class="docutils literal"><span class="pre">Host</span></tt>, формат ответа принимаемый клиентом (<tt class="docutils literal"><span class="pre">Accept</span></tt>) и приложение используемое клиентов для выполнения запроса (<tt class="docutils literal"><span class="pre">User-Agent</span></tt>). Существует много других заголовков, которые можно найти в <a class="reference external" href="http://en.wikipedia.org/wiki/List_of_HTTP_header_fields">Википедии</a>.</p>
 	</div>
 	<div class="section" id="step-2-the-server-returns-a-response">
 	  <h3>Шаг 2: Сервер возвращает ответ<a class="headerlink" href="#step-2-the-server-returns-a-response" title="Permalink to this headline">¶</a></h3>
@@ -124,7 +124,7 @@ The value of the "foo" parameter is: symfony
       </div>
       <div class="section" id="requests-and-responses-in-symfony">
 	<h2>Запросы и ответы в Symfony<a class="headerlink" href="#requests-and-responses-in-symfony" title="Permalink to this headline">¶</a></h2>
-	<p>Symfony предоставляет альтернативу подходу PHP, посредством двух классов, которые позволяют вам взаимодейстовать с HTTP-запросом и ответом более простым путем. Класс <tt class="docutils literal"><a class="reference external" href="http://api.symfony.com/2.0/Symfony/Component/HttpFoundation/Request.html" title="Symfony\Component\HttpFoundation\Request"><span class="pre">Request</span></a></tt> – простое объектно-ориентированное представление сообщения HTTP-запроса. С ним, в ваших руках имеется вся информация запроса:</p>
+	<p>Symfony предоставляет альтернативу подходу PHP, посредством двух классов, которые позволяют вам взаимодействовать с HTTP-запросом и ответом более простым путем. Класс <tt class="docutils literal"><a class="reference external" href="http://api.symfony.com/2.0/Symfony/Component/HttpFoundation/Request.html" title="Symfony\Component\HttpFoundation\Request"><span class="pre">Request</span></a></tt> – простое объектно-ориентированное представление сообщения HTTP-запроса. С ним, в ваших руках имеется вся информация запроса:</p>
 	<div class="highlight-php"><div class="highlight"><pre><span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\Request</span><span class="p">;</span>
 
 <span class="nv">$request</span> <span class="o">=</span> <span class="nx">Request</span><span class="o">::</span><span class="na">createFromGlobals</span><span class="p">();</span>
@@ -156,7 +156,7 @@ The value of the "foo" parameter is: symfony
 <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
 	  </pre></div>
 	</div>
-	<p>Если же Symfony не предлагает ничего другого, то у все все равно уже есть инструментарий для легкого доступа к информации запроса и объектно-ориентированный интерфейс для создания ответа. Даже если вы изучите многие сильные возможности Symfony, имейте ввиду, что цель вашего приложения <em>интерпретировать запрос и создавать соотвествующий ответ, основанный на логике вашего приложения</em>.</p>
+	<p>Если же Symfony не предлагает ничего другого, то у все все равно уже есть инструментарий для легкого доступа к информации запроса и объектно-ориентированный интерфейс для создания ответа. Даже если вы изучите многие сильные возможности Symfony, имейте ввиду, что цель вашего приложения <em>интерпретировать запрос и создавать соответствующий ответ, основанный на логике вашего приложения</em>.</p>
 	<div class="admonition-wrapper">
 	  <div class="tip"></div><div class="admonition admonition-tip"><p class="first admonition-title">Tip</p>
 	    <p class="last">Классы <tt class="docutils literal"><span class="pre">Request</span></tt> и <tt class="docutils literal"><span class="pre">Response</span></tt> – часть автономного компонента включенного в Symfony и называемого <tt class="docutils literal"><span class="pre">HttpFoundation</span></tt>. Этот компонент может быть использован полностью независимо от Symfony и также предоставляет классы для обработки сессий и загрузки файлов.</p>
@@ -293,7 +293,7 @@ blog.php
 	    <li>Предоставление удобной конфигурации и “клея”, связывающего библиотеки друг с другом.</li>
 	  </ol>
 	  <p>Цель фреймворка, интеграция независимых инструментов, для обеспечения целостности для разработчиков. Даже в самом фреймворке можно настраивать или заменять бандлы (т.е. плагины).</p>
-	  <p>Symfony2 предоставляет мощный набор инструментов для быстрой разработки веб-приложений без наложения ограничений. Обычные пользователи могут быстро начать разработку с помощью Symfony2, предоставляющей каркас проекта по-умочанию. Для более продвинутых пользователей, пределом могут стать только небеса.</p>
+	  <p>Symfony2 предоставляет мощный набор инструментов для быстрой разработки веб-приложений без наложения ограничений. Обычные пользователи могут быстро начать разработку с помощью Symfony2, предоставляющей каркас проекта по-умолчанию. Для более продвинутых пользователей, пределом могут стать только небеса.</p>
 	</div>
       </div>
     </div>
