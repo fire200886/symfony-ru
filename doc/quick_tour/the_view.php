@@ -38,14 +38,17 @@
 	    прочесть официальную <a class="reference external" href="http://www.twig-project.org/documentation">документацию</a>.
 	    Эта глава лишь краткий осмотр главных концепций.</p>
 	</div></div>
-	<p>A Twig template is a text file that can generate any text-based format (HTML,
-	  XML, CSV, LaTeX, ...). Twig defines two kinds of delimiters:</p>
+	<p>Шаблон Twig - это текстовый файл, который может генерировать любой
+	 текстовый формат (HTML, XML, CSV, LaTeX, ...). Twig предлагает два вида
+	 разделителей:</p>
 	<ul class="simple">
-	  <li><tt class="docutils literal"><span class="pre">{{</span> <span class="pre">...</span> <span class="pre">}}</span></tt>: Outputs a variable or the result of an expression;</li>
-	  <li><tt class="docutils literal"><span class="pre">{%</span> <span class="pre">...</span> <span class="pre">%}</span></tt>: A tag that controls the logic of the template; it is used to
-	    execute <tt class="docutils literal"><span class="pre">for</span></tt> loops or <tt class="docutils literal"><span class="pre">if</span></tt> statements for instance.</li>
+	  <li><tt class="docutils literal"><span class="pre">{{</span> <span class="pre">...</span> <span class="pre">}}</span></tt>: Выводит переменную или результат выражения;</li>
+	  <li><tt class="docutils literal"><span class="pre">{%</span> <span class="pre">...</span> <span class="pre">%}</span></tt>: Тэг, который
+	   управляет логикой шаблона; он используется для запуска циклов 
+	   <tt class="docutils literal"><span class="pre">for</span></tt>
+	   или выражений <tt class="docutils literal"><span class="pre">if</span></tt>.</li>
 	</ul>
-	<p>Below is a minimal template that illustrates a few basics:</p>
+	<p>Ниже приведен минимальный шаблон, который показывает основы:</p>
 	<div class="highlight-html+jinja"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
     <span class="nt">&lt;head&gt;</span>
@@ -65,18 +68,18 @@
 	</div>
 	<div class="admonition-wrapper">
 	  <div class="tip"></div><div class="admonition admonition-tip"><p class="first admonition-title">Tip</p>
-	    <p class="last">Comments can be included inside templates using the <tt class="docutils literal"><span class="pre">{#</span> <span class="pre">...</span> <span class="pre">#}</span></tt> delimiter.</p>
+	    <p class="last">Комментарии могут быть включены шаблон используя раделитель <tt class="docutils literal"><span class="pre">{#</span> <span class="pre">...</span> <span class="pre">#}</span></tt>.</p>
 	</div></div>
-	<p>To render a template, use the <tt class="docutils literal"><span class="pre">render</span></tt> method from within a controller
-	  and pass it any variables needed in the template:</p>
+	<p>Чтобы отобразить шаблон используйте метод <tt class="docutils literal"><span class="pre">render</span></tt> из контроллера и
+	передайте любые переменные, требуемые в шаблоне:</p>
 	<div class="highlight-php"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">'AcmeDemoBundle:Demo:hello.html.twig'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">,</span>
 <span class="p">));</span>
 	  </pre></div>
 	</div>
-	<p>Variables passed to a template can be strings, arrays, or even objects. Twig
-	  abstracts the difference between them and lets you access "attributes" of a
-	  variable with the dot (<tt class="docutils literal"><span class="pre">.</span></tt>) notation:</p>
+	<p>Переменные, передаваемые в шаблон могут быть строками, массивами
+	или даже объектами. Twig скрывает разницу между ними и позволяет
+	получить доступ к "аттрибутам" через точку (<tt class="docutils literal"><span class="pre">.</span></tt>):</p>
 	<div class="highlight-jinja"><div class="highlight"><pre><span class="c">{# array('name' =&gt; 'Fabien') #}</span><span class="x"></span>
 <span class="cp">{{</span> <span class="nv">name</span> <span class="cp">}}</span><span class="x"></span>
 
@@ -100,13 +103,14 @@
 	</div>
 	<div class="admonition-wrapper">
 	  <div class="note"></div><div class="admonition admonition-note"><p class="first admonition-title">Note</p>
-	    <p class="last">It's important to know that the curly braces are not part of the variable
-	      but the print statement. If you access variables inside tags don't put the
-	      braces around.</p>
+	    <p class="last">Важно понимать, что фигурные скобки не являются
+	    частью переменной, но являются частью выражения вывода.
+	    Если вы хотите получить доступ к переменной внутри тегов не
+	    ставьте фигурные скобки.</p>
 	</div></div>
       </div>
       <div class="section" id="decorating-templates">
-	<h2>Decorating Templates<a class="headerlink" href="#decorating-templates" title="Permalink to this headline">¶</a></h2>
+	<h2>Декорирование шаблонов<a class="headerlink" href="#decorating-templates" title="Permalink to this headline">¶</a></h2>
 	<p>More often than not, templates in a project share common elements, like the
 	  well-known header and footer. In Symfony2, we like to think about this problem
 	  differently: a template can be decorated by another one. This works exactly

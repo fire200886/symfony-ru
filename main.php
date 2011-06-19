@@ -77,4 +77,6 @@ new TWTR.Widget({
 		</p>
 
 	</div>
+	<script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
+<div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="icon" data-yashareQuickServices="yaru,vkontakte,facebook,twitter,lj,friendfeed"></div>
 </div>
