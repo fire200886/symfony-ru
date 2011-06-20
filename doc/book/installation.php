@@ -2,7 +2,7 @@
 <div class="column_02">
 
   <div class="box_title">
-    <h1 class="title_01">Installing and Configuring Symfony</h1>
+    <h1 class="title_01">Установка и кофигурация Symfony</h1>
   </div>
   
   
